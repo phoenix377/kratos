@@ -126,5 +126,13 @@ func (r *SchemaExtensionCredentials) Run(ctx jsonschema.ValidationContext, s sch
 }
 
 func (r *SchemaExtensionCredentials) Finish() error {
+	r.l.Lock()
+	defer r.l.Unlock()
+
+	if _, ok := r.i.GetCredentials(CredentialsTypeCodeAuth); ok {
+		if len(r.v[CredentialsTypeCodeAuth]) == 0 {
+			r.i.DeleteCredentialsType(CredentialsTypeCodeAuth)
+		}
+	}
 	return nil
 }
