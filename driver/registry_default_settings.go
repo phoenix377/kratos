@@ -37,10 +37,6 @@ func (m *RegistryDefault) PostSettingsPostPersistHooks(ctx context.Context, sett
 		hooks = slices.Insert(hooks, 0, settings.PostHookPostPersistExecutor(m.HookVerifier()))
 	}
 
-	if settingsType == "profile" {
-		hooks = append(hooks, settings.NewAALUpgradeHook(m))
-	}
-
 	return hooks, nil
 }
 
