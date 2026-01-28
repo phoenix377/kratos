@@ -1180,7 +1180,7 @@ Cypress.Commands.add(
       .then((message) => extractOTPCode(message.body))
       .then((code) => {
         expect(code).to.not.be.undefined
-        expect(code.length).to.equal(6)
+        expect(code.length).to.equal(8)
         cy.wrap(code).as("recoveryCode")
         if (enterCode) {
           cy.get("input[name='code']").type(code)
@@ -1532,7 +1532,7 @@ Cypress.Commands.add("getVerificationCodeFromEmail", (email) => {
       expect(message.toAddresses[0].trim()).to.equal(email)
       const code = extractOTPCode(message.body)
       expect(code).to.not.be.undefined
-      expect(code.length).to.equal(6)
+      expect(code.length).to.equal(8)
       return code
     })
 })
@@ -1551,7 +1551,7 @@ Cypress.Commands.add("getRegistrationCodeFromEmail", (email, opts) => {
     .then((message) => {
       const code = extractOTPCode(message.body)
       expect(code).to.not.be.undefined
-      expect(code.length).to.equal(6)
+      expect(code.length).to.equal(8)
       return code
     })
 })
@@ -1570,7 +1570,7 @@ Cypress.Commands.add("getLoginCodeFromEmail", (email, opts) => {
     .then((message) => {
       const code = extractOTPCode(message.body)
       expect(code).to.not.be.undefined
-      expect(code.length).to.equal(6)
+      expect(code.length).to.equal(8)
       return code
     })
 })

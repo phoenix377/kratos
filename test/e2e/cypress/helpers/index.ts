@@ -93,7 +93,7 @@ export const privilegedLifespan = 5000 + 1000
 
 export const appPrefix = (app) => `[data-testid="app-${app}"] `
 
-export const codeRegex = /(\d{6})/
+export const codeRegex = /(\d{8})/
 
 export function extractOTPCode(body: string): string | null {
   const result = codeRegex.exec(body)

@@ -10,7 +10,7 @@ import {
 import { expect } from "../fixtures"
 import { LoginFlowStyle, OryKratosConfiguration } from "../../shared/config"
 
-export const codeRegex = /(\d{6})/
+export const codeRegex = /(\d{8})/
 
 /**
  * Extracts the recovery or verification code from a mail
