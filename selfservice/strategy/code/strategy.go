@@ -498,7 +498,7 @@ func SetDefaultFlowState(f flow.Flow, resend string) {
 	}
 }
 
-const CodeLength = 6
+const CodeLength = 8
 
 func GenerateCode() string {
 	return randx.MustString(CodeLength, randx.Numeric)

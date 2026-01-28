@@ -78,7 +78,7 @@ func TestSender(t *testing.T) {
 			assert.EqualValues(t, "not-tracked@ory.sh", messages[1].Recipient)
 			assert.Contains(t, messages[1].Subject, "Account access attempted")
 
-			assert.NotRegexp(t, testhelpers.CodeRegex, messages[1].Body, "Expected message to not contain an 6 digit recovery code, but it did: ", messages[1].Body)
+			assert.NotRegexp(t, testhelpers.CodeRegex, messages[1].Body, "Expected message to not contain an 8 digit recovery code, but it did: ", messages[1].Body)
 		})
 
 		t.Run("case=with custom templates", func(t *testing.T) {
@@ -177,7 +177,7 @@ func TestSender(t *testing.T) {
 			assert.EqualValues(t, "not-tracked@ory.sh", messages[1].Recipient)
 			assert.Contains(t, messages[1].Subject, "Someone tried to verify this email address")
 
-			assert.NotRegexp(t, testhelpers.CodeRegex, messages[1].Body, "Expected message to not contain an 6 digit recovery code, but it did: ", messages[1].Body)
+			assert.NotRegexp(t, testhelpers.CodeRegex, messages[1].Body, "Expected message to not contain an 8 digit recovery code, but it did: ", messages[1].Body)
 		})
 
 		t.Run("case=with custom templates", func(t *testing.T) {
